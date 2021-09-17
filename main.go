@@ -1,9 +1,23 @@
 package main
 
-import "fmt"
+import (
+	"net/http"
+
+	"github.com/labstack/echo/v4"
+)
+
+type User struct {
+	Name    string
+	Address string
+}
 
 func main() {
-	fmt.Println("saya wawan")
-	fmt.Println("hello world")
-	fmt.Println("hello world2")
+	e := echo.New()
+	e.GET("v1/users", GetUserController)
+	e.Start(":8000")
+
+}
+func GetUserController(c echo.Context) error {
+	user := User{"wawan", "Pasuruan"}
+	return c.JSON(http.StatusOK, user)
 }
