@@ -1,9 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"alterra/configs"
+	"alterra/routes"
+)
 
 func main() {
-	fmt.Println("saya wawan")
-	fmt.Println("hello world")
-	fmt.Println("hello world2")
+	configs.InitDB()
+	e := routes.NewRoute()
+	e.Start(":8000")
 }
