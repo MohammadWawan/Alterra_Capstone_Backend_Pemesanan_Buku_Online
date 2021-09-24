@@ -1,0 +1,756 @@
+kind: books#volumes
+totalItems: 1734
+items:
+  - kind: books#volume
+    id: zYw3sYFtz9kC
+    etag: GRS8HpIDkAA
+    selfLink: https://www.googleapis.com/books/v1/volumes/zYw3sYFtz9kC
+    volumeInfo:
+      title: The Contemporary Thesaurus of Search Terms and Synonyms
+      subtitle: A Guide for Natural Language Computer Searching
+      authors:
+        - Sara D. Knapp
+      publisher: Greenwood Publishing Group
+      publishedDate: '2000'
+      description: >-
+        Whether your search is limited to a single database or is as expansive
+        as all of cyberspace, you won't find the intended results unless you use
+        the words that work. Now in its second edition, Sara Knapp has updated
+        and expanded this invaluable resource. Unlike any other thesaurus
+        available, this popular guide offers a wealth of natural language
+        options in a convenient, A-to-Z format. It's ideal for helping users
+        find the appropriate word or words for computer searches in the
+        humanities, social sciences, and business. The second edition has added
+        more than 9,000 entries to the first edition's extensive list. Now, the
+        Thesaurus contains almost 21,000 search entries! New or expanded areas
+        include broader coverage of business terms and humanities-including arts
+        literature, philosophy, religion, and music.
+      industryIdentifiers:
+        - type: ISBN_10
+          identifier: 157356107X
+        - type: ISBN_13
+          identifier: '9781573561075'
+      readingModes:
+        text: false
+        image: true
+      pageCount: 682
+      printType: BOOK
+      categories:
+        - Reference
+      averageRating: 3
+      ratingsCount: 1
+      maturityRating: NOT_MATURE
+      allowAnonLogging: false
+      contentVersion: 1.2.2.0.preview.1
+      panelizationSummary:
+        containsEpubBubbles: false
+        containsImageBubbles: false
+      imageLinks:
+        smallThumbnail: >-
+          http://books.google.com/books/content?id=zYw3sYFtz9kC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api
+        thumbnail: >-
+          http://books.google.com/books/content?id=zYw3sYFtz9kC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api
+      language: en
+      previewLink: >-
+        http://books.google.com/books?id=zYw3sYFtz9kC&pg=PR19&dq=search+terms&hl=&cd=1&source=gbs_api
+      infoLink: >-
+        https://play.google.com/store/books/details?id=zYw3sYFtz9kC&source=gbs_api
+      canonicalVolumeLink: https://play.google.com/store/books/details?id=zYw3sYFtz9kC
+    saleInfo:
+      country: US
+      saleability: FOR_SALE
+      isEbook: true
+      listPrice:
+        amount: 179.95
+        currencyCode: USD
+      retailPrice:
+        amount: 143.96
+        currencyCode: USD
+      buyLink: >-
+        https://play.google.com/store/books/details?id=zYw3sYFtz9kC&rdid=book-zYw3sYFtz9kC&rdot=1&source=gbs_api
+      offers:
+        - finskyOfferType: 1
+          listPrice:
+            amountInMicros: 179950000
+            currencyCode: USD
+          retailPrice:
+            amountInMicros: 143960000
+            currencyCode: USD
+          giftable: true
+    accessInfo:
+      country: US
+      viewability: PARTIAL
+      embeddable: true
+      publicDomain: false
+      textToSpeechPermission: ALLOWED
+      epub:
+        isAvailable: false
+      pdf:
+        isAvailable: true
+        acsTokenLink: >-
+          http://books.google.com/books/download/The_Contemporary_Thesaurus_of_Search_Ter-sample-pdf.acsm?id=zYw3sYFtz9kC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api
+      webReaderLink: >-
+        http://play.google.com/books/reader?id=zYw3sYFtz9kC&hl=&printsec=frontcover&source=gbs_api
+      accessViewStatus: SAMPLE
+      quoteSharingAllowed: false
+    searchInfo:
+      textSnippet: >-
+        When you begin a <b>search</b> , you start with those <b>words</b> that
+        come to mind . You then “ translate &quot; your thoughts into the
+        <b>words</b> that will best retrieve the&nbsp;...
+  - kind: books#volume
+    id: mFT_CgAAQBAJ
+    etag: 8OqXCTVL+0s
+    selfLink: https://www.googleapis.com/books/v1/volumes/mFT_CgAAQBAJ
+    volumeInfo:
+      title: 'Search Terms: Alpha'
+      authors:
+        - Travis Hill
+      publisher: Travis Hill
+      description: >-
+        College sophomore Tyler Gallagher loves computers, video games, and
+        Thanksgiving Break. He's timed the arrival of his computer components
+        with the holiday vacation from school to blast aliens and enemy soldiers
+        alike on his brand new, high-end gaming computer. When the parts arrive,
+        it soon becomes apparent that they aren't what he ordered from
+        TechTerritory. Thinking he's the butt of a practical joke, Tyler plays
+        along, and builds the computer with the obviously fake components. His
+        annoyance turns to shock when the computer powers on. His shock turns to
+        a mix of disbelief and wonder when he learns the strange "quantum"
+        computer can pull web pages from the near future. Disbelief and wonder
+        soon become fear and uncertainty when he discovers the future might not
+        be so bright. "Search Terms: Alpha" is the first half of a new time
+        travel thriller. 52,000 word novel Adult themes / language / mild sexual
+        content
+      readingModes:
+        text: true
+        image: true
+      pageCount: 150
+      printType: BOOK
+      categories:
+        - Fiction
+      maturityRating: NOT_MATURE
+      allowAnonLogging: false
+      contentVersion: 1.3.3.0.preview.3
+      panelizationSummary:
+        containsEpubBubbles: false
+        containsImageBubbles: false
+      imageLinks:
+        smallThumbnail: >-
+          http://books.google.com/books/content?id=mFT_CgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api
+        thumbnail: >-
+          http://books.google.com/books/content?id=mFT_CgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api
+      language: en
+      previewLink: >-
+        http://books.google.com/books?id=mFT_CgAAQBAJ&pg=PT215&dq=search+terms&hl=&cd=2&source=gbs_api
+      infoLink: >-
+        https://play.google.com/store/books/details?id=mFT_CgAAQBAJ&source=gbs_api
+      canonicalVolumeLink: https://play.google.com/store/books/details?id=mFT_CgAAQBAJ
+    saleInfo:
+      country: US
+      saleability: FOR_SALE
+      isEbook: true
+      listPrice:
+        amount: 0.99
+        currencyCode: USD
+      retailPrice:
+        amount: 0.99
+        currencyCode: USD
+      buyLink: >-
+        https://play.google.com/store/books/details?id=mFT_CgAAQBAJ&rdid=book-mFT_CgAAQBAJ&rdot=1&source=gbs_api
+      offers:
+        - finskyOfferType: 1
+          listPrice:
+            amountInMicros: 990000
+            currencyCode: USD
+          retailPrice:
+            amountInMicros: 990000
+            currencyCode: USD
+          giftable: true
+    accessInfo:
+      country: US
+      viewability: PARTIAL
+      embeddable: true
+      publicDomain: false
+      textToSpeechPermission: ALLOWED
+      epub:
+        isAvailable: true
+      pdf:
+        isAvailable: true
+      webReaderLink: >-
+        http://play.google.com/books/reader?id=mFT_CgAAQBAJ&hl=&printsec=frontcover&source=gbs_api
+      accessViewStatus: SAMPLE
+      quoteSharingAllowed: false
+    searchInfo:
+      textSnippet: >-
+        &quot;<b>Search Terms</b>: Alpha&quot; is the first half of a new time
+        travel thriller. &quot;<b>Search Terms</b>: Beta&quot; coming soon!
+        52,000 word novel Adult themes/language/mild sexual&nbsp;...
+  - kind: books#volume
+    id: SNAjMMp3H5UC
+    etag: ElcO+asPC+o
+    selfLink: https://www.googleapis.com/books/v1/volumes/SNAjMMp3H5UC
+    volumeInfo:
+      title: Keyword Intelligence
+      subtitle: Keyword Research for Search, Social, and Beyond
+      authors:
+        - Ron Jones
+      publisher: John Wiley & Sons
+      publishedDate: '2011-10-19'
+      industryIdentifiers:
+        - type: ISBN_13
+          identifier: '9781118216910'
+        - type: ISBN_10
+          identifier: '1118216911'
+      readingModes:
+        text: true
+        image: true
+      pageCount: 360
+      printType: BOOK
+      categories:
+        - Business & Economics
+      maturityRating: NOT_MATURE
+      allowAnonLogging: false
+      contentVersion: 1.7.5.0.preview.3
+      imageLinks:
+        smallThumbnail: >-
+          http://books.google.com/books/content?id=SNAjMMp3H5UC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api
+        thumbnail: >-
+          http://books.google.com/books/content?id=SNAjMMp3H5UC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api
+      language: en
+      previewLink: >-
+        http://books.google.com/books?id=SNAjMMp3H5UC&printsec=frontcover&dq=search+terms&hl=&cd=3&source=gbs_api
+      infoLink: >-
+        http://books.google.com/books?id=SNAjMMp3H5UC&dq=search+terms&hl=&source=gbs_api
+      canonicalVolumeLink: >-
+        https://books.google.com/books/about/Keyword_Intelligence.html?hl=&id=SNAjMMp3H5UC
+    saleInfo:
+      country: US
+      saleability: NOT_FOR_SALE
+      isEbook: false
+    accessInfo:
+      country: US
+      viewability: PARTIAL
+      embeddable: true
+      publicDomain: false
+      textToSpeechPermission: ALLOWED
+      epub:
+        isAvailable: true
+        acsTokenLink: >-
+          http://books.google.com/books/download/Keyword_Intelligence-sample-epub.acsm?id=SNAjMMp3H5UC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api
+      pdf:
+        isAvailable: true
+        acsTokenLink: >-
+          http://books.google.com/books/download/Keyword_Intelligence-sample-pdf.acsm?id=SNAjMMp3H5UC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api
+      webReaderLink: >-
+        http://play.google.com/books/reader?id=SNAjMMp3H5UC&hl=&printsec=frontcover&source=gbs_api
+      accessViewStatus: SAMPLE
+      quoteSharingAllowed: false
+    searchInfo:
+      textSnippet: >-
+        This unique, detailed guide to every aspect of keyword research also
+        features case studies, examples, tutorials, tips, and previously
+        undocumented techniques drawn from renowned keyword research expert Ron
+        Jones&#39;s extensive professional ...
+  - kind: books#volume
+    id: uackDwAAQBAJ
+    etag: XA8+3hT+WGM
+    selfLink: https://www.googleapis.com/books/v1/volumes/uackDwAAQBAJ
+    volumeInfo:
+      title: The Everything Large-Print Travel Word Search Book
+      subtitle: Find Your Way Through 150 Easy-to-read Puzzles
+      authors:
+        - Charles Timmerman
+      publisher: Simon and Schuster
+      publishedDate: '2011-10-15'
+      description: >-
+        Looking for a laugh during your layover? Need to fight boredom in the
+        backseat? Coping with a long commute? Whether you're in an airport, in
+        the backseat of a car, or on a train, these easy-to-read puzzles make
+        the perfect traveling companion. Each puzzle features such engaging
+        themes as: Road trips Adventure travel Museums and tourist attractions
+        National parks Packed with 150 addictive and entertaining puzzles, this
+        book provides vacationers, business travelers, and commuters with
+        large-format puzzles that are easy on the eyes, and great entertainment
+        on any trip!
+      industryIdentifiers:
+        - type: ISBN_13
+          identifier: '9781440527364'
+        - type: ISBN_10
+          identifier: '1440527369'
+      readingModes:
+        text: false
+        image: false
+      pageCount: 352
+      printType: BOOK
+      categories:
+        - Crafts & Hobbies
+      maturityRating: NOT_MATURE
+      allowAnonLogging: false
+      contentVersion: preview-1.0.0
+      panelizationSummary:
+        containsEpubBubbles: false
+        containsImageBubbles: false
+      imageLinks:
+        smallThumbnail: >-
+          http://books.google.com/books/content?id=uackDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api
+        thumbnail: >-
+          http://books.google.com/books/content?id=uackDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api
+      language: en
+      previewLink: >-
+        http://books.google.com/books?id=uackDwAAQBAJ&pg=PP1&dq=search+terms&hl=&cd=4&source=gbs_api
+      infoLink: >-
+        http://books.google.com/books?id=uackDwAAQBAJ&dq=search+terms&hl=&source=gbs_api
+      canonicalVolumeLink: >-
+        https://books.google.com/books/about/The_Everything_Large_Print_Travel_Word_S.html?hl=&id=uackDwAAQBAJ
+    saleInfo:
+      country: US
+      saleability: NOT_FOR_SALE
+      isEbook: false
+    accessInfo:
+      country: US
+      viewability: PARTIAL
+      embeddable: true
+      publicDomain: false
+      textToSpeechPermission: ALLOWED_FOR_ACCESSIBILITY
+      epub:
+        isAvailable: false
+      pdf:
+        isAvailable: false
+      webReaderLink: >-
+        http://play.google.com/books/reader?id=uackDwAAQBAJ&hl=&printsec=frontcover&source=gbs_api
+      accessViewStatus: SAMPLE
+      quoteSharingAllowed: false
+    searchInfo:
+      textSnippet: >-
+        Each puzzle features such engaging themes as: Road trips Adventure
+        travel Museums and tourist attractions National parks Packed with 150
+        addictive and entertaining puzzles, this book provides vacationers,
+        business travelers, and commuters ...
+  - kind: books#volume
+    id: XgbhAAAAMAAJ
+    etag: 901kgWHc9fw
+    selfLink: https://www.googleapis.com/books/v1/volumes/XgbhAAAAMAAJ
+    volumeInfo:
+      title: Search INFORM.
+      publishedDate: '1986'
+      industryIdentifiers:
+        - type: OTHER
+          identifier: UOM:39015014765765
+      readingModes:
+        text: false
+        image: false
+      printType: BOOK
+      categories:
+        - ABI/INFORM (Information retrieval system)
+      maturityRating: NOT_MATURE
+      allowAnonLogging: false
+      contentVersion: 0.2.2.0.preview.0
+      panelizationSummary:
+        containsEpubBubbles: false
+        containsImageBubbles: false
+      imageLinks:
+        smallThumbnail: >-
+          http://books.google.com/books/content?id=XgbhAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api
+        thumbnail: >-
+          http://books.google.com/books/content?id=XgbhAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api
+      language: en
+      previewLink: >-
+        http://books.google.com/books?id=XgbhAAAAMAAJ&q=search+terms&dq=search+terms&hl=&cd=5&source=gbs_api
+      infoLink: >-
+        http://books.google.com/books?id=XgbhAAAAMAAJ&dq=search+terms&hl=&source=gbs_api
+      canonicalVolumeLink: >-
+        https://books.google.com/books/about/Search_INFORM.html?hl=&id=XgbhAAAAMAAJ
+    saleInfo:
+      country: US
+      saleability: NOT_FOR_SALE
+      isEbook: false
+    accessInfo:
+      country: US
+      viewability: NO_PAGES
+      embeddable: false
+      publicDomain: false
+      textToSpeechPermission: ALLOWED
+      epub:
+        isAvailable: false
+      pdf:
+        isAvailable: false
+      webReaderLink: >-
+        http://play.google.com/books/reader?id=XgbhAAAAMAAJ&hl=&printsec=frontcover&source=gbs_api
+      accessViewStatus: NONE
+      quoteSharingAllowed: false
+    searchInfo:
+      textSnippet: >-
+        Multiword terms must be hyphenated. To <b>search terms</b> that include
+        field codes or explanatory terms, remove parentheses and hyphenate, e.g.
+        OVERHEAD-COSTS ACC&nbsp;...
+  - kind: books#volume
+    id: UjG8qXVRSSQC
+    etag: LomyRmHtG30
+    selfLink: https://www.googleapis.com/books/v1/volumes/UjG8qXVRSSQC
+    volumeInfo:
+      title: Google Power Search
+      authors:
+        - Stephan Spencer
+      publisher: '"O''Reilly Media, Inc."'
+      publishedDate: '2011-07-23'
+      description: >-
+        Behind Google's deceptively simple interface is immense power for both
+        market and competitive research—if you know how to use it well. Sure,
+        basic searches are easy, but complex searches require specialized
+        skills. This concise book takes you through the full range of Google's
+        powerful search-refinement features, so you can quickly find the
+        specific information you need. Learn techniques ranging from simple
+        Boolean logic to URL parameters and other advanced tools, and see how
+        they're applied to real-world market research examples. Incorporate
+        advanced search operators such as filetype:, intitle:, daterange:, and
+        others into your queries Use Google filtering tools, including Search
+        Within Results, Similar Pages, and SafeSearch, among others Explore the
+        breadth of Google through auxiliary search services like Google News,
+        Google Books, Google Blog Search, and Google Scholar Acquire advanced
+        Google skills that result in more effective search engine optimization
+        (SEO)
+      industryIdentifiers:
+        - type: ISBN_13
+          identifier: '9781449311568'
+        - type: ISBN_10
+          identifier: '1449311563'
+      readingModes:
+        text: false
+        image: true
+      pageCount: 56
+      printType: BOOK
+      categories:
+        - Computers
+      maturityRating: NOT_MATURE
+      allowAnonLogging: false
+      contentVersion: 0.4.0.0.preview.1
+      imageLinks:
+        smallThumbnail: >-
+          http://books.google.com/books/content?id=UjG8qXVRSSQC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api
+        thumbnail: >-
+          http://books.google.com/books/content?id=UjG8qXVRSSQC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api
+      language: en
+      previewLink: >-
+        http://books.google.com/books?id=UjG8qXVRSSQC&printsec=frontcover&dq=search+terms&hl=&cd=6&source=gbs_api
+      infoLink: >-
+        http://books.google.com/books?id=UjG8qXVRSSQC&dq=search+terms&hl=&source=gbs_api
+      canonicalVolumeLink: >-
+        https://books.google.com/books/about/Google_Power_Search.html?hl=&id=UjG8qXVRSSQC
+    saleInfo:
+      country: US
+      saleability: NOT_FOR_SALE
+      isEbook: false
+    accessInfo:
+      country: US
+      viewability: PARTIAL
+      embeddable: true
+      publicDomain: false
+      textToSpeechPermission: ALLOWED
+      epub:
+        isAvailable: false
+      pdf:
+        isAvailable: true
+      webReaderLink: >-
+        http://play.google.com/books/reader?id=UjG8qXVRSSQC&hl=&printsec=frontcover&source=gbs_api
+      accessViewStatus: SAMPLE
+      quoteSharingAllowed: false
+    searchInfo:
+      textSnippet: >-
+        Sure, basic searches are easy, but complex searches require specialized
+        skills. This concise book takes you through the full range of
+        Google&#39;s powerful search-refinement features, so you can quickly
+        find the specific information you need.
+  - kind: books#volume
+    id: kpGxDgAAQBAJ
+    etag: jGbxRnB68h4
+    selfLink: https://www.googleapis.com/books/v1/volumes/kpGxDgAAQBAJ
+    volumeInfo:
+      title: The Everything Word Search Book
+      subtitle: Over 250 Puzzles to Keep You Entertained for Hours!
+      authors:
+        - Charles Timmerman
+      publisher: Simon and Schuster
+      publishedDate: '2005-11-15'
+      description: >-
+        Can't get enough of word searches? With over 250 word search puzzles,
+        The Everything Word Search Book is a perfect companion for anyone who
+        loves to solve these clever conundrums. Written by Charles Timmerman,
+        the creator and founder of Funster.com, this interactive book will
+        titillate puzzle crackers of all abilities. Word searches are organized
+        by clever chapter themes that will keep you guessing--and smiling!
+        Puzzles include: On the Job - know the ropes Alive! - endangered species
+        Celebratory - birthday party Fun and Games - Olympic sports Melodies -
+        rock and roll Big Bucks! - business leaders Laugh, relax, and improve
+        your solving skills and visual reflexes--The Everything Word Search Book
+        has it all!
+      industryIdentifiers:
+        - type: ISBN_13
+          identifier: '9781593374310'
+        - type: ISBN_10
+          identifier: '1593374313'
+      readingModes:
+        text: false
+        image: false
+      pageCount: 304
+      printType: BOOK
+      categories:
+        - Games & Activities
+      maturityRating: NOT_MATURE
+      allowAnonLogging: false
+      contentVersion: 1.0.0.0.preview.0
+      panelizationSummary:
+        containsEpubBubbles: false
+        containsImageBubbles: false
+      imageLinks:
+        smallThumbnail: >-
+          http://books.google.com/books/content?id=kpGxDgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api
+        thumbnail: >-
+          http://books.google.com/books/content?id=kpGxDgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api
+      language: en
+      previewLink: >-
+        http://books.google.com/books?id=kpGxDgAAQBAJ&pg=PP1&dq=search+terms&hl=&cd=7&source=gbs_api
+      infoLink: >-
+        http://books.google.com/books?id=kpGxDgAAQBAJ&dq=search+terms&hl=&source=gbs_api
+      canonicalVolumeLink: >-
+        https://books.google.com/books/about/The_Everything_Word_Search_Book.html?hl=&id=kpGxDgAAQBAJ
+    saleInfo:
+      country: US
+      saleability: NOT_FOR_SALE
+      isEbook: false
+    accessInfo:
+      country: US
+      viewability: PARTIAL
+      embeddable: true
+      publicDomain: false
+      textToSpeechPermission: ALLOWED_FOR_ACCESSIBILITY
+      epub:
+        isAvailable: false
+      pdf:
+        isAvailable: false
+      webReaderLink: >-
+        http://play.google.com/books/reader?id=kpGxDgAAQBAJ&hl=&printsec=frontcover&source=gbs_api
+      accessViewStatus: SAMPLE
+      quoteSharingAllowed: false
+    searchInfo:
+      textSnippet: >-
+        Written by Charles Timmerman, the creator and founder of Funster.com,
+        this interactive book will titillate puzzle crackers of all abilities.
+        Word searches are organized by clever chapter themes that will keep you
+        guessing--and smiling!
+  - kind: books#volume
+    id: Vup5zQEACAAJ
+    etag: Opc8Qtk1SQo
+    selfLink: https://www.googleapis.com/books/v1/volumes/Vup5zQEACAAJ
+    volumeInfo:
+      title: Sight Words Word Search Book for Kids
+      subtitle: High Frequency Words Activity Book for Raising Confident Readers
+      authors:
+        - Sparkling Minds
+      publishedDate: '2020-02-12'
+      description: >-
+        Support your kids in becoming confident readers by helping them master
+        high frequency words! Sight words are words that occur frequently enough
+        in written language that a child should recognize them automatically on
+        sight. Another characteristic that makes many sight words special is
+        that they don't follow the rules of phonics. For these reasons,
+        mastering sight words is of great importance for boosting your child's
+        reading confidence and future success. Word search puzzles provide a
+        powerful tool to review and reinforce high frequency words. The process
+        of search and recognition of letters and words allows children to build
+        their literacy skills in a fun and easy way. Lowercase letters. Since
+        most of the words children encounter in reading materials are made up of
+        lowercase letters, literacy experts recommend teaching sight words using
+        lowercase. 50 word search puzzles with over 170 Dolch sight words for
+        preschool, kindergarten, first grade and second grade. Word placement
+        (horizontal and vertical, no diagonal or backwards) facilitates the
+        learning process. Answers can be found at the back of the book. Let your
+        children have fun while building their reading confidence!
+      industryIdentifiers:
+        - type: ISBN_13
+          identifier: '9798612891567'
+      readingModes:
+        text: false
+        image: false
+      pageCount: 70
+      printType: BOOK
+      maturityRating: NOT_MATURE
+      allowAnonLogging: false
+      contentVersion: preview-1.0.0
+      panelizationSummary:
+        containsEpubBubbles: false
+        containsImageBubbles: false
+      imageLinks:
+        smallThumbnail: >-
+          http://books.google.com/books/content?id=Vup5zQEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api
+        thumbnail: >-
+          http://books.google.com/books/content?id=Vup5zQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api
+      language: en
+      previewLink: >-
+        http://books.google.com/books?id=Vup5zQEACAAJ&dq=search+terms&hl=&cd=8&source=gbs_api
+      infoLink: >-
+        http://books.google.com/books?id=Vup5zQEACAAJ&dq=search+terms&hl=&source=gbs_api
+      canonicalVolumeLink: >-
+        https://books.google.com/books/about/Sight_Words_Word_Search_Book_for_Kids.html?hl=&id=Vup5zQEACAAJ
+    saleInfo:
+      country: US
+      saleability: NOT_FOR_SALE
+      isEbook: false
+    accessInfo:
+      country: US
+      viewability: NO_PAGES
+      embeddable: false
+      publicDomain: false
+      textToSpeechPermission: ALLOWED
+      epub:
+        isAvailable: false
+      pdf:
+        isAvailable: false
+      webReaderLink: >-
+        http://play.google.com/books/reader?id=Vup5zQEACAAJ&hl=&printsec=frontcover&source=gbs_api
+      accessViewStatus: NONE
+      quoteSharingAllowed: false
+    searchInfo:
+      textSnippet: >-
+        Word placement (horizontal and vertical, no diagonal or backwards)
+        facilitates the learning process. Answers can be found at the back of
+        the book. Let your children have fun while building their reading
+        confidence!
+  - kind: books#volume
+    id: BBWWAAAAMAAJ
+    etag: vwuzw/YsD9g
+    selfLink: https://www.googleapis.com/books/v1/volumes/BBWWAAAAMAAJ
+    volumeInfo:
+      title: Using Computers in Legal Research
+      subtitle: A Guide to LEXIS and WESTLAW
+      authors:
+        - Christopher G. Wren
+        - Jill Robinson Wren
+      publisher: Adams & Ambrose Pub
+      publishedDate: '1994'
+      industryIdentifiers:
+        - type: OTHER
+          identifier: UOM:39015027296394
+      readingModes:
+        text: false
+        image: false
+      pageCount: 815
+      printType: BOOK
+      categories:
+        - Computers
+      maturityRating: NOT_MATURE
+      allowAnonLogging: false
+      contentVersion: 0.2.2.0.preview.0
+      panelizationSummary:
+        containsEpubBubbles: false
+        containsImageBubbles: false
+      imageLinks:
+        smallThumbnail: >-
+          http://books.google.com/books/content?id=BBWWAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api
+        thumbnail: >-
+          http://books.google.com/books/content?id=BBWWAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api
+      language: en
+      previewLink: >-
+        http://books.google.com/books?id=BBWWAAAAMAAJ&q=search+terms&dq=search+terms&hl=&cd=9&source=gbs_api
+      infoLink: >-
+        http://books.google.com/books?id=BBWWAAAAMAAJ&dq=search+terms&hl=&source=gbs_api
+      canonicalVolumeLink: >-
+        https://books.google.com/books/about/Using_Computers_in_Legal_Research.html?hl=&id=BBWWAAAAMAAJ
+    saleInfo:
+      country: US
+      saleability: NOT_FOR_SALE
+      isEbook: false
+    accessInfo:
+      country: US
+      viewability: NO_PAGES
+      embeddable: false
+      publicDomain: false
+      textToSpeechPermission: ALLOWED
+      epub:
+        isAvailable: false
+      pdf:
+        isAvailable: false
+      webReaderLink: >-
+        http://play.google.com/books/reader?id=BBWWAAAAMAAJ&hl=&printsec=frontcover&source=gbs_api
+      accessViewStatus: NONE
+      quoteSharingAllowed: false
+    searchInfo:
+      textSnippet: >-
+        628, 660, 667, 670 compound words 27-28, 34-36 connectors as
+        establishing relationships among <b>search terms</b> 24,41.44, 158-62
+        derivation 23n equivalent search&nbsp;...
+  - kind: books#volume
+    id: niC0WxEbEDYC
+    etag: hZNgyE36mAw
+    selfLink: https://www.googleapis.com/books/v1/volumes/niC0WxEbEDYC
+    volumeInfo:
+      title: 'Word Search Puzzles: Categories'
+      publisher: Remedia Publications
+      industryIdentifiers:
+        - type: ISBN_10
+          identifier: '1596398590'
+        - type: ISBN_13
+          identifier: '9781596398597'
+      readingModes:
+        text: false
+        image: true
+      printType: BOOK
+      maturityRating: NOT_MATURE
+      allowAnonLogging: false
+      contentVersion: 1.1.3.0.preview.1
+      panelizationSummary:
+        containsEpubBubbles: false
+        containsImageBubbles: false
+      imageLinks:
+        smallThumbnail: >-
+          http://books.google.com/books/content?id=niC0WxEbEDYC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api
+        thumbnail: >-
+          http://books.google.com/books/content?id=niC0WxEbEDYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api
+      language: en
+      previewLink: >-
+        http://books.google.com/books?id=niC0WxEbEDYC&pg=PA18&dq=search+terms&hl=&cd=10&source=gbs_api
+      infoLink: >-
+        https://play.google.com/store/books/details?id=niC0WxEbEDYC&source=gbs_api
+      canonicalVolumeLink: https://play.google.com/store/books/details?id=niC0WxEbEDYC
+    saleInfo:
+      country: US
+      saleability: FOR_SALE
+      isEbook: true
+      listPrice:
+        amount: 5.6
+        currencyCode: USD
+      retailPrice:
+        amount: 4.31
+        currencyCode: USD
+      buyLink: >-
+        https://play.google.com/store/books/details?id=niC0WxEbEDYC&rdid=book-niC0WxEbEDYC&rdot=1&source=gbs_api
+      offers:
+        - finskyOfferType: 1
+          listPrice:
+            amountInMicros: 5600000
+            currencyCode: USD
+          retailPrice:
+            amountInMicros: 4310000
+            currencyCode: USD
+          giftable: true
+    accessInfo:
+      country: US
+      viewability: PARTIAL
+      embeddable: true
+      publicDomain: false
+      textToSpeechPermission: ALLOWED
+      epub:
+        isAvailable: false
+      pdf:
+        isAvailable: true
+        acsTokenLink: >-
+          http://books.google.com/books/download/Word_Search_Puzzles_Categories-sample-pdf.acsm?id=niC0WxEbEDYC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api
+      webReaderLink: >-
+        http://play.google.com/books/reader?id=niC0WxEbEDYC&hl=&printsec=frontcover&source=gbs_api
+      accessViewStatus: SAMPLE
+      quoteSharingAllowed: false
+    searchInfo:
+      textSnippet: >-
+        MUSICAL <b>TERMS</b> MECHANICAL <b>TERMS</b> LEGAL <b>TERMS</b> Use Your
+        Senses Read the <b>words</b> in the list below REMEDIA PUBLICATIONS
+        <b>WORD SEARCH</b> CATEGORIES 18 Name.
