@@ -14,5 +14,9 @@ func NewRoute() *echo.Echo {
 	ev1.POST("users/register", controllers.RegisterController)
 	ev1.GET("users/:userId", controllers.DetailUserController)
 
+	ev1.GET("karyawans", controllers.GetKaryawanController)
+	ev1.POST("karyawans/login", controllers.KaryawanLoginController)
+	ev1.POST("karyawans/register", controllers.KaryawanRegisterController)
+	ev1.GET("karyawans/:karyawanId", controllers.DetailKaryawanController)
 	return e
 }

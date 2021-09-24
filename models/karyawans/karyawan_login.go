@@ -1,6 +1,6 @@
-package users
+package karyawans
 
-type UserLogin struct {
+type KaryawanLogin struct {
 	Email    string `json:"email"`
 	Password string `json:"password"`
 }
