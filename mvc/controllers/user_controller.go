@@ -2,8 +2,10 @@ package controllers
 
 import (
 	"alterra/configs"
+	"alterra/middlewares"
 	"alterra/models/response"
 	"alterra/models/users"
+	"errors"
 	"net/http"
 	"strconv"
 
@@ -51,12 +53,53 @@ func RegisterController(c echo.Context) error {
 func LoginController(c echo.Context) error {
 	userLogin := users.UserLogin{}
 	c.Bind(&userLogin)
-	// login
+
+	user := users.User{}
+
+	result := configs.DB.First(&user, "email = ? AND password = ?",
+		userLogin.Email, userLogin.Password)
+
+	if result.Error != nil {
+		if errors.Is(result.Error, gorm.ErrRecordNotFound) {
+			return c.JSON(http.StatusForbidden, response.BaseResponse{
+				Code:    http.StatusForbidden,
+				Message: "User tidak ditemukan atau password tidak sesuai",
+				Data:    nil,
+			})
+		} else {
+			return c.JSON(http.StatusInternalServerError, response.BaseResponse{
+				Code:    http.StatusInternalServerError,
+				Message: "Ada keselahan di server",
+				Data:    nil,
+			})
+		}
+
+	}
+
+	token, err := middlewares.GenerateTokenJWT(user.Id)
+
+	if err != nil {
+		return c.JSON(http.StatusInternalServerError, response.BaseResponse{
+			Code:    http.StatusInternalServerError,
+			Message: "Ada keselahan di server",
+			Data:    nil,
+		})
+	}
+
+	userResponse := users.UserResponse{
+		Id:        user.Id,
+		Name:      user.Name,
+		Email:     user.Email,
+		Address:   user.Address,
+		Token:     token,
+		CreatedAt: user.CreatedAt,
+		UpdatedAt: user.UpdatedAt,
+	}
 
 	return c.JSON(http.StatusOK, response.BaseResponse{
 		Code:    http.StatusOK,
-		Message: "Berhasil",
-		Data:    userLogin,
+		Message: "Berhasil login",
+		Data:    userResponse,
 	})
 }
 
@@ -92,8 +135,10 @@ func GetUserController(c echo.Context) error {
 		}
 	}
 
+	userId, _ := middlewares.GetClaimsUserId(c)
+
 	return c.JSON(http.StatusOK, response.BaseResponse{
-		Code:    http.StatusOK,
+		Code:    userId,
 		Message: "Berhasil mendapatkan data user",
 		Data:    users,
 	})

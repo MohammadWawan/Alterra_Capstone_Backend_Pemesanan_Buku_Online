@@ -3,10 +3,7 @@ package configs
 import (
 	"alterra/models/books"
 	"alterra/models/karyawans"
-	"alterra/models/methodPayments"
-	"alterra/models/transaction"
 	"alterra/models/users"
-	"alterra/models/wishlist"
 	"fmt"
 
 	"gorm.io/driver/mysql"
@@ -30,5 +27,5 @@ func InitDB() {
 }
 
 func Migration() {
-	DB.AutoMigrate(&users.User{}, &karyawans.Karyawan{}, &books.Books{}, &books.Category{}, &books.Description{}, &transaction.Transaksi{}, &transaction.Transaksi_Detail{}, &wishlist.Wishlist{}, &methodPayments.Method_Payment{})
+	DB.AutoMigrate(&users.User{}, &karyawans.Karyawan{}, &books.Books{}, &books.Kategori{}, &books.Deskripsi{})
 }
