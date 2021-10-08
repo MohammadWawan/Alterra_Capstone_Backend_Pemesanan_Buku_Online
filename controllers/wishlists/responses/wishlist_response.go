@@ -1,16 +1,18 @@
 package responses
 
 import (
+	"alterra/business/books"
+	"alterra/business/users"
 	"alterra/business/wishlists"
 	"time"
 )
 
 type WishlistResponse struct {
-	Id        uint      `json:"id"`
-	Name      string    `json:"name"`
-	Title     string    `json:"title"`
-	CreatedAt time.Time `json:"createdat "`
-	UpdatedAt time.Time `json:"updateat "`
+	Id        uint         `json:"id"`
+	User      users.Domain `json:"user"`
+	Book      books.Domain `json:"book"`
+	CreatedAt time.Time    `json:"createdat "`
+	UpdatedAt time.Time    `json:"updateat "`
 }
 
 type SearchResponse struct {
@@ -20,8 +22,8 @@ type SearchResponse struct {
 func FromDomain(domain wishlists.Domain) WishlistResponse {
 	return WishlistResponse{
 		Id:        domain.Id,
-		Name:      domain.Name,
-		Title:     domain.Name,
+		User:      domain.User,
+		Book:      domain.Book,
 		CreatedAt: domain.CreatedAt,
 		UpdatedAt: domain.UpdatedAt,
 	}

@@ -15,9 +15,9 @@ type Transaction struct {
 	Payment_Method_Id uint
 	User_Id           uint
 	Karyawan_Id       uint
-	Payment_Method    payment_methods.Payment_Method `gorm:"foreignKey:payment_method_id"`
-	User              users.Users                    `gorm:"foreignKey:user_id"`
-	Karyawan          karyawans.Karyawans            `gorm:"foreignKey:karyawan_id"`
+	Payment_Method    payment_methods.Payment_Method `gorm:"foreignKey:Payment_Method_Id"`
+	User              users.Users                    `gorm:"foreignKey:User_Id"`
+	Karyawan          karyawans.Karyawans            `gorm:"foreignKey:Karyawan_Id"`
 	Total_Qty         uint
 	Total_Price       uint
 	CreatedAt         time.Time
@@ -28,9 +28,9 @@ type Transaction struct {
 func FromDomain(domain transactions.Domain) Transaction {
 	return Transaction{
 		Id:             domain.Id,
-		Payment_Method: payment_methods.Payment_Method{},
-		User:           users.Users{},
-		Karyawan:       karyawans.Karyawans{},
+		Payment_Method: payment_methods.FromDomain(domain.Payment_Method),
+		User:           users.FromDomain(domain.User),
+		Karyawan:       karyawans.FromDomain(domain.Karyawan),
 		Total_Qty:      domain.Total_Qty,
 		Total_Price:    domain.Total_Price,
 		CreatedAt:      domain.CreatedAt,
@@ -40,11 +40,14 @@ func FromDomain(domain transactions.Domain) Transaction {
 
 func (transaction *Transaction) ToDomain() transactions.Domain {
 	return transactions.Domain{
-		Id:          transaction.Id,
-		Total_Qty:   transaction.Total_Qty,
-		Total_Price: transaction.Total_Price,
-		CreatedAt:   transaction.CreatedAt,
-		UpdatedAt:   transaction.UpdatedAt,
+		Id:                transaction.Id,
+		Method_Payment_Id: transaction.Payment_Method_Id,
+		User_Id:           transaction.User_Id,
+		Karyawan_Id:       transaction.Karyawan_Id,
+		Total_Qty:         transaction.Total_Qty,
+		Total_Price:       transaction.Total_Price,
+		CreatedAt:         transaction.CreatedAt,
+		UpdatedAt:         transaction.UpdatedAt,
 	}
 }
 

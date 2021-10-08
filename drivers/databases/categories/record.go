@@ -8,28 +8,28 @@ import (
 )
 
 type Categories struct {
-	Id            uint `gorm:"primaryKey"`
-	Name_Category string
-	CreatedAt     time.Time
-	UpdatedAt     time.Time
-	DeletedAt     gorm.DeletedAt `gorm:"index"`
+	Id        uint `gorm:"primaryKey"`
+	Category  string
+	CreatedAt time.Time
+	UpdatedAt time.Time
+	DeletedAt gorm.DeletedAt `gorm:"index"`
 }
 
 func FromDomain(domain categories.Domain) Categories {
 	return Categories{
-		Id:            domain.Id,
-		Name_Category: domain.Name_Category,
-		CreatedAt:     domain.CreatedAt,
-		UpdatedAt:     domain.UpdatedAt,
+		Id:        domain.Id,
+		Category:  domain.Category,
+		CreatedAt: domain.CreatedAt,
+		UpdatedAt: domain.UpdatedAt,
 	}
 }
 
 func (category *Categories) ToDomain() categories.Domain {
 	return categories.Domain{
-		Id:            category.Id,
-		Name_Category: category.Name_Category,
-		CreatedAt:     category.CreatedAt,
-		UpdatedAt:     category.UpdatedAt,
+		Id:        category.Id,
+		Category:  category.Category,
+		CreatedAt: category.CreatedAt,
+		UpdatedAt: category.UpdatedAt,
 	}
 }
 

@@ -1,6 +1,8 @@
 package wishlists
 
 import (
+	"alterra/business/books"
+	"alterra/business/users"
 	"context"
 	"time"
 )
@@ -9,8 +11,8 @@ type Domain struct {
 	Id        uint
 	User_Id   uint
 	Book_Id   uint
-	Name      string
-	Title     string
+	User      users.Domain
+	Book      books.Domain
 	CreatedAt time.Time
 	UpdatedAt time.Time
 }

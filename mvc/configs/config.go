@@ -1,9 +1,9 @@
 package configs
 
 import (
-	"alterra/models/books"
-	"alterra/models/karyawans"
-	"alterra/models/users"
+	"alterra/mvc/models/books"
+	"alterra/mvc/models/karyawans"
+	"alterra/mvc/models/users"
 	"fmt"
 
 	"gorm.io/driver/mysql"

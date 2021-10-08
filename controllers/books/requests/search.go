@@ -1,6 +1,8 @@
 package requests
 
-import "alterra/business/books"
+import (
+	"alterra/business/books"
+)
 
 type BookSearch struct {
 	Title     string `json:"title"`

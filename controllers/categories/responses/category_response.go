@@ -6,10 +6,10 @@ import (
 )
 
 type CategoryResponse struct {
-	Id            uint      `json:"id"`
-	Name_Category string    `json:"category "`
-	CreatedAt     time.Time `json:"createdat "`
-	UpdatedAt     time.Time `json:"updateat "`
+	Id        uint      `json:"id"`
+	Category  string    `json:"category"`
+	CreatedAt time.Time `json:"createdat"`
+	UpdatedAt time.Time `json:"updateat"`
 }
 
 type SearchResponse struct {
@@ -18,10 +18,10 @@ type SearchResponse struct {
 
 func FromDomain(domain categories.Domain) CategoryResponse {
 	return CategoryResponse{
-		Id:            domain.Id,
-		Name_Category: domain.Name_Category,
-		CreatedAt:     domain.CreatedAt,
-		UpdatedAt:     domain.UpdatedAt,
+		Id:        domain.Id,
+		Category:  domain.Category,
+		CreatedAt: domain.CreatedAt,
+		UpdatedAt: domain.UpdatedAt,
 	}
 }
 

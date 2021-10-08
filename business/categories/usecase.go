@@ -20,7 +20,7 @@ func NewCategoryUsecase(repo Repository, timeout time.Duration) *CategoryUsecase
 }
 
 func (uc *CategoryUsecase) InsertCategory(ctx context.Context, domain Domain) (Domain, error) {
-	if domain.Name_Category == "" {
+	if domain.Category == "" {
 		return Domain{}, errors.New("category empty")
 	}
 

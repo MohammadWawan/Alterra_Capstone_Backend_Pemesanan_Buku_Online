@@ -536,6 +536,20 @@ paths:
             enum:
               - asc
               - desc
+        - name: sortBy
+          in: query
+          description: Sort by payment_methods
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            enum:
+              - name
+              - nominal
+              - target_date
+              - priority
+              - is_done
         - name: limit
           in: query
           description: Limit payment_methods result
@@ -557,14 +571,14 @@ paths:
       responses:
         "405":
           description: Invalid input
-        '200':
+        "200":
           description: Success
       security:
         - api_key: []
     post:
       tags:
         - payment_methods
-      summary: Create new payment_method
+      summary: Create new payment_methods
       requestBody:
         $ref: '#/components/requestBodies/Payment_method'
       responses:
@@ -575,10 +589,10 @@ paths:
       security:
         - api_key: []
   /payment_methods/{id}:
-    get:  
+    get:
       tags:
         - payment_methods
-      summary: Destroy payment_method by id
+      summary: Detail payment_methods
       parameters:
         - name: id
           in: path
@@ -598,7 +612,7 @@ paths:
         - api_key: []
     put:
       tags:
-        - payment_method
+        - payment_methods
       summary: Update payment_method data
       parameters:
         - name: id
@@ -639,7 +653,7 @@ paths:
         "200":
           description: Success
       security:
-        - api_key: [] 
+        - api_key: []
   /wishlists:
     get:
       tags:
@@ -673,7 +687,7 @@ paths:
               - is_done
         - name: limit
           in: query
-          description: Limit users result
+          description: Limit wishlists result
           required: false
           style: form
           explode: true
@@ -801,10 +815,11 @@ paths:
           schema:
             type: string
             enum:
-              - requests
-              - verify
-              - success
-              - fail
+              - name
+              - nominal
+              - target_date
+              - priority
+              - is_done
         - name: limit
           in: query
           description: Limit transactions result
@@ -835,7 +850,7 @@ paths:
         - transactions
       summary: Create new transactions
       requestBody:
-        $ref: '#/components/requestBodies/Book'
+        $ref: '#/components/requestBodies/Transaction'
       responses:
         "405":
           description: Invalid input
@@ -847,7 +862,7 @@ paths:
     get:
       tags:
         - transactions
-      summary: Detail transaction
+      summary: Detail transactions
       parameters:
         - name: id
           in: path
@@ -880,7 +895,7 @@ paths:
             type: integer
             format: int64
       requestBody:
-        $ref: '#/components/requestBodies/User'
+        $ref: '#/components/requestBodies/Transaction'
       responses:
         "405":
           description: Invalid input
@@ -909,6 +924,141 @@ paths:
           description: Success
       security:
         - api_key: []
+  /transaction_details:
+    get:
+      tags:
+        - transaction_details
+      summary: List all transaction_details
+      parameters:
+        - name: sort
+          in: query
+          description: Sort transaction_details asc/desc
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            enum:
+              - asc
+              - desc
+        - name: sortBy
+          in: query
+          description: Sort by transaction_details
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            enum:
+              - name
+              - nominal
+              - target_date
+              - priority
+              - is_done
+        - name: limit
+          in: query
+          description: Limit transaction_details result
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: integer
+            format: int64
+        - name: offset
+          in: query
+          description: Offset transaction_details result
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "405":
+          description: Invalid input
+        "200":
+          description: Success
+      security:
+        - api_key: []
+    post:
+      tags:
+        - transaction_details
+      summary: Create new transaction_details
+      requestBody:
+        $ref: '#/components/requestBodies/Transaction_Detail'
+      responses:
+        "405":
+          description: Invalid input
+        "200":
+          description: Success
+      security:
+        - api_key: []
+  /transaction_details/{id}:
+    get:
+      tags:
+        - transaction_details
+      summary: Detail transaction_details
+      parameters:
+        - name: id
+          in: path
+          description: ID of transaction_detail to return
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "405":
+          description: Invalid input
+        "200":
+          description: Success
+      security:
+        - api_key: []
+    put:
+      tags:
+        - transaction_details
+      summary: Update transaction_detail data
+      parameters:
+        - name: id
+          in: path
+          description: ID of transaction_detail to return
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        $ref: '#/components/requestBodies/Transaction_Detail'
+      responses:
+        "405":
+          description: Invalid input
+        "200":
+          description: Success
+      security:
+        - api_key: []
+    delete:
+      tags:
+        - transaction_details
+      summary: Destroy transaction_detail by id
+      parameters:
+        - name: id
+          in: path
+          description: ID of transaction_detail to return
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "405":
+          description: Invalid input
+        "200":
+          description: Success
+      security:
+        - api_key: []      
 components:
   schemas:
     User:
@@ -966,6 +1116,8 @@ components:
           format: int64
         title:
           type: string
+        price:
+          type: integer
         author:
           type: string
         publisher:
@@ -992,10 +1144,11 @@ components:
           type: string
       xml:
         name: Tag        
-    Status_Order:
+    Transasction_details:
       required:
-        - name
-        - photoUrls
+        - title
+        - qty
+        - price
       type: object
       properties:
         id:
@@ -1003,19 +1156,15 @@ components:
           format: int64
         category:
           $ref: '#/components/schemas/Category'
-        name:
-          type: string
-          example: wawan
         title:
           type: string
           example: java itu mudah
-        photoUrls:
-          type: array
-          xml:
-            name: photoUrl
-            wrapped: true
-          items:
-            type: string
+        qty:
+          type: integer
+          example: 1
+        price:
+          type: integer
+          example: 100000
         tags:
           type: array
           xml:
@@ -1023,6 +1172,31 @@ components:
             wrapped: true
           items:
             $ref: '#/components/schemas/Tag'
+      xml:
+        name: Transaction_Detail
+    Transasction:
+      required:
+        - name
+        - payment_method
+        - total_qty
+        - total_price
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+          example: wawan
+        payment_method:
+          type: string
+          example: Debit BRI (1247 0100 5834 534)
+        total_qty:
+          type: integer
+          example: 1
+        total_price:
+          type: integer
+          example: 100000
         status:
           type: string
           description: book status in the store
@@ -1031,27 +1205,37 @@ components:
             - pending
             - sold
       xml:
-        name: Status_Order
+        name: Transaction
   requestBodies:
     User:
       description: User object that needs to be added to the store
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Status_Order'
+            $ref: '#/components/schemas/Transasction_details'
         application/xml:
           schema:
-            $ref: '#/components/schemas/Status_Order'
+            $ref: '#/components/schemas/Transasction_details'
       required: true
-    Status_Order:
-      description: Status_Order object that needs to be added to the store
+    Transaction_Detail:
+      description: Transaction_Detail object that needs to be added to the store
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Status_Order'
+            $ref: '#/components/schemas/Transasction_details'
         application/xml:
           schema:
-            $ref: '#/components/schemas/Status_Order'
+            $ref: '#/components/schemas/Transasction_details'
+      required: true
+    Transaction:
+      description: Transaction object that needs to be added to the store, for buys books
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Transasction'
+        application/xml:
+          schema:
+            $ref: '#/components/schemas/Transasction'
       required: true
     RefreshToken:
       description: RefeshToken object that needs to be refresh the token 

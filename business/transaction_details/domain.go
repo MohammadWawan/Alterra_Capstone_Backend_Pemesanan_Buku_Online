@@ -1,14 +1,18 @@
 package transaction_details
 
 import (
+	"alterra/business/books"
+	"alterra/business/transactions"
 	"context"
 	"time"
 )
 
 type Domain struct {
 	Id             uint
-	Buku_Id        uint
+	Book_Id        uint
 	Transaction_Id uint
+	Book           books.Domain
+	Transaction    transactions.Domain
 	Qty            uint
 	Price          uint
 	CreatedAt      time.Time

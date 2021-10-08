@@ -59,6 +59,7 @@ func (uc *UserUsecase) Register(ctx context.Context, domain Domain) (Domain, err
 	}
 
 	data, err := uc.Repo.GetByEmail(ctx, domain.Email)
+
 	if data.Id > 0 {
 		return Domain{}, errors.New("email has been used")
 	}

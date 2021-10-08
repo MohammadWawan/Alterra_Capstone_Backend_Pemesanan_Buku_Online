@@ -1,6 +1,9 @@
 package transactions
 
 import (
+	"alterra/business/karyawans"
+	"alterra/business/payment_methods"
+	"alterra/business/users"
 	"context"
 	"time"
 )
@@ -10,6 +13,9 @@ type Domain struct {
 	Method_Payment_Id uint
 	User_Id           uint
 	Karyawan_Id       uint
+	Payment_Method    payment_methods.Domain
+	User              users.Domain
+	Karyawan          karyawans.Domain
 	Total_Qty         uint
 	Total_Price       uint
 	CreatedAt         time.Time

@@ -13,8 +13,8 @@ type Transaction_Detail struct {
 	Id             uint `gorm:"primaryKey"`
 	Book_Id        uint
 	Transaction_Id uint
-	Book           books.Books              `gorm:"foreignKey:book_id"`
-	Transaction    transactions.Transaction `gorm:"foreignKey:book_id"`
+	Book           books.Books              `gorm:"foreignKey:Book_Id "`
+	Transaction    transactions.Transaction `gorm:"foreignKey:Transaction_Id"`
 	Qty            uint
 	Price          uint
 	CreatedAt      time.Time
@@ -25,8 +25,8 @@ type Transaction_Detail struct {
 func FromDomain(domain transaction_details.Domain) Transaction_Detail {
 	return Transaction_Detail{
 		Id:          domain.Id,
-		Book:        books.Books{},
-		Transaction: transactions.Transaction{},
+		Book:        books.FromDomain(domain.Book),
+		Transaction: transactions.FromDomain(domain.Transaction),
 		Qty:         domain.Qty,
 		Price:       domain.Price,
 		CreatedAt:   domain.CreatedAt,

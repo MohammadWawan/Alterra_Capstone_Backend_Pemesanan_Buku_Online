@@ -1,4 +1,4 @@
-package wishlist
+package wishlists
 
 import (
 	"alterra/business/wishlists"
@@ -13,8 +13,8 @@ type Wishlist struct {
 	Id        uint `gorm:"primaryKey"`
 	User_Id   uint
 	Book_Id   uint
-	Name      users.Users `gorm:"foreignKey:user_id"`
-	Title     books.Books `gorm:"many2many:wishlist_books;"`
+	User      users.Users `gorm:"foreignKey:User_Id"`
+	Book      books.Books `gorm:"foreignKey:Book_Id"`
 	CreatedAt time.Time
 	UpdatedAt time.Time
 	DeletedAt gorm.DeletedAt `gorm:"index"`
@@ -23,18 +23,21 @@ type Wishlist struct {
 func FromDomain(domain wishlists.Domain) Wishlist {
 	return Wishlist{
 		Id:        domain.Id,
-		Name:      users.Users{},
-		Title:     books.Books{},
+		User_Id:   domain.User_Id,
+		Book_Id:   domain.Book_Id,
+		User:      users.FromDomain(domain.User),
+		Book:      books.FromDomain(domain.Book),
 		CreatedAt: domain.CreatedAt,
 		UpdatedAt: domain.UpdatedAt,
+		DeletedAt: gorm.DeletedAt{},
 	}
 }
 
 func (wishlist *Wishlist) ToDomain() wishlists.Domain {
 	return wishlists.Domain{
 		Id:        wishlist.Id,
-		Name:      wishlist.Name.Name,
-		Title:     wishlist.Title.Title,
+		User_Id:   wishlist.User_Id,
+		Book_Id:   wishlist.Book_Id,
 		CreatedAt: wishlist.CreatedAt,
 		UpdatedAt: wishlist.UpdatedAt,
 	}

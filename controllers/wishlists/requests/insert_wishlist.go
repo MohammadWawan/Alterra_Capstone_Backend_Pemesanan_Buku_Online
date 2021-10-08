@@ -1,15 +1,19 @@
 package requests
 
-import "alterra/business/wishlists"
+import (
+	"alterra/business/books"
+	"alterra/business/users"
+	"alterra/business/wishlists"
+)
 
 type InsertWishlist struct {
-	Name  string `json:"name"`
-	Title string `json:"title"`
+	User users.Domain `json:"user"`
+	Book books.Domain `json:"book"`
 }
 
 func (wishlist *InsertWishlist) ToDomain() *wishlists.Domain {
 	return &wishlists.Domain{
-		Name:  wishlist.Name,
-		Title: wishlist.Title,
+		User: wishlist.User,
+		Book: wishlist.Book,
 	}
 }

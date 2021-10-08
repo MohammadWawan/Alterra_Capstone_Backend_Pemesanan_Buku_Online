@@ -1,4 +1,4 @@
-package wishlist
+package wishlists
 
 import (
 	"alterra/business/wishlists"

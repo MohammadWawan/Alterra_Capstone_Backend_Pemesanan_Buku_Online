@@ -17,8 +17,8 @@ type Books struct {
 	Price          uint
 	Author         string
 	Publisher      string
-	Category       categories.Categories     `gorm:"foreignKey:kategori_id"`
-	Description    descriptions.Descriptions `gorm:"foreignkey:Description;references:description_id"`
+	Category       categories.Categories     `gorm:"foreignKey:Category_Id"`
+	Description    descriptions.Descriptions `gorm:"foreignKey:Description_Id"`
 	CreatedAt      time.Time
 	UpdatedAt      time.Time
 	DeletedAt      gorm.DeletedAt `gorm:"index"`
@@ -31,8 +31,8 @@ func FromDomain(domain books.Domain) Books {
 		Title:       domain.Title,
 		Price:       domain.Price,
 		Author:      domain.Author,
-		Category:    categories.Categories{},
-		Description: descriptions.Descriptions{},
+		Category:    categories.FromDomain(domain.Category),
+		Description: descriptions.FromDomain(domain.Description),
 		Publisher:   domain.Publisher,
 		CreatedAt:   domain.CreatedAt,
 		UpdatedAt:   domain.UpdatedAt,

@@ -1,6 +1,8 @@
 package books
 
 import (
+	"alterra/business/categories"
+	"alterra/business/descriptions"
 	"context"
 	"time"
 )
@@ -13,6 +15,8 @@ type Domain struct {
 	Price          uint
 	Author         string
 	Publisher      string
+	Category       categories.Domain
+	Description    descriptions.Domain
 	CreatedAt      time.Time
 	UpdatedAt      time.Time
 }

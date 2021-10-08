@@ -20,12 +20,12 @@ func NewWishlistUsecase(repo Repository, timeout time.Duration) *WishlistUsecase
 }
 
 func (uc *WishlistUsecase) InsertWishlist(ctx context.Context, domain Domain) (Domain, error) {
-	if domain.Name == "" {
-		return Domain{}, errors.New("name empty")
+	if domain.User == domain.User {
+		return Domain{}, errors.New("user empty")
 	}
 
-	if domain.Title == "" {
-		return Domain{}, errors.New("title empty")
+	if domain.Book == domain.Book {
+		return Domain{}, errors.New("book empty")
 	}
 
 	wishlist, err := uc.Repo.InsertWishlist(ctx, domain)
