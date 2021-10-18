@@ -1,19 +1,17 @@
 package requests
 
 import (
-	"alterra/business/books"
-	"alterra/business/users"
 	"alterra/business/wishlists"
 )
 
 type InsertWishlist struct {
-	User users.Domain `json:"user"`
-	Book books.Domain `json:"book"`
+	User_Id uint `json:"user_id"`
+	Book_Id uint `json:"book_id"`
 }
 
 func (wishlist *InsertWishlist) ToDomain() *wishlists.Domain {
 	return &wishlists.Domain{
-		User: wishlist.User,
-		Book: wishlist.Book,
+		User_Id: wishlist.User_Id,
+		Book_Id: wishlist.Book_Id,
 	}
 }

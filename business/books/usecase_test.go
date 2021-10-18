@@ -3,6 +3,7 @@ package books_test
 import (
 	"alterra/business/books"
 	"alterra/business/books/mocks"
+
 	"context"
 	"errors"
 	"testing"
@@ -20,29 +21,25 @@ var listBookDomain []books.Domain
 func setup() {
 	bookService = books.NewBookUsecase(&bookRepository, time.Hour*10)
 	bookDomain = books.Domain{
-		Id:        1,
-		Title:     "Java itu Mudah",
-		Price:     100000,
-		Author:    "Wawan",
-		Publisher: "Aksara jawi",
+		Id:             1,
+		Title:          "Java itu Mudah",
+		Price:          100000,
+		Author:         "Wawan",
+		Publisher:      "Aksara jawi",
+		Category_Id:    1,
+		Description_Id: 1,
 	}
 	listBookDomain = append(listBookDomain, bookDomain)
 }
 
 func TestInsertBook(t *testing.T) {
-	setup()
-	bookRepository.On("InsertBook", mock.Anything, mock.Anything).Return(bookDomain, nil)
 	t.Run("Test Case 1 | Success Insert Book", func(t *testing.T) {
-		category, err := bookService.InsertBook(context.Background(), books.Domain{
-			Id:        1,
-			Title:     "Java itu Mudah",
-			Price:     100000,
-			Author:    "Wawan",
-			Publisher: "Aksara jawi",
-		})
+		setup()
+		bookRepository.On("InsertBook", mock.Anything, mock.Anything).Return(bookDomain, nil).Once()
+		book, err := bookService.InsertBook(context.Background(), &books.Domain{})
 
 		assert.NoError(t, err)
-		assert.Equal(t, bookDomain, category)
+		assert.Equal(t, bookDomain, book)
 	})
 }
 

@@ -1,19 +1,17 @@
 package requests
 
 import (
-	"alterra/business/books"
-	"alterra/business/users"
 	"alterra/business/wishlists"
 )
 
 type WishlistSearch struct {
-	User users.Domain `json:"user"`
-	Book books.Domain `json:"book"`
+	User_Id uint `json:"user_id"`
+	Book_Id uint `json:"book_id"`
 }
 
 func ToDomain(search WishlistSearch) wishlists.Domain {
 	return wishlists.Domain{
-		User: search.User,
-		Book: search.Book,
+		User_Id: search.User_Id,
+		Book_Id: search.Book_Id,
 	}
 }

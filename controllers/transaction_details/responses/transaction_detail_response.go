@@ -1,20 +1,18 @@
 package responses
 
 import (
-	"alterra/business/books"
 	"alterra/business/transaction_details"
-	"alterra/business/transactions"
 	"time"
 )
 
 type Transaction_detail_response struct {
-	Id          uint                `json:"id"`
-	Book        books.Domain        `json:"book"`
-	Transaction transactions.Domain `json:"transaction"`
-	Qty         uint                `json:"qty"`
-	Price       uint                `json:"price"`
-	CreatedAt   time.Time           `json:"createdat "`
-	UpdatedAt   time.Time           `json:"updateat "`
+	Id             uint      `json:"id"`
+	Book_Id        uint      `json:"book_id"`
+	Transaction_Id uint      `json:"transaction_id"`
+	Qty            uint      `json:"qty"`
+	Price          uint      `json:"price"`
+	CreatedAt      time.Time `json:"createdat "`
+	UpdatedAt      time.Time `json:"updateat "`
 }
 
 type SearchResponse struct {
@@ -23,13 +21,13 @@ type SearchResponse struct {
 
 func FromDomain(domain transaction_details.Domain) Transaction_detail_response {
 	return Transaction_detail_response{
-		Id:          domain.Id,
-		Book:        books.Domain{},
-		Transaction: transactions.Domain{},
-		Qty:         domain.Qty,
-		Price:       domain.Price,
-		CreatedAt:   domain.CreatedAt,
-		UpdatedAt:   domain.UpdatedAt,
+		Id:             domain.Id,
+		Book_Id:        domain.Book_Id,
+		Transaction_Id: domain.Transaction_Id,
+		Qty:            domain.Qty,
+		Price:          domain.Price,
+		CreatedAt:      domain.CreatedAt,
+		UpdatedAt:      domain.UpdatedAt,
 	}
 }
 

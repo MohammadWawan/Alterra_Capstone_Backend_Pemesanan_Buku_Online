@@ -37,8 +37,8 @@ func (rep *MysqlBookRepository) GetById(ctx context.Context, Id uint) (books.Dom
 	return book.ToDomain(), nil
 }
 
-func (rep *MysqlBookRepository) InsertBook(_ context.Context, domain books.Domain) (books.Domain, error) {
-	book := FromDomain(domain)
+func (rep *MysqlBookRepository) InsertBook(ctx context.Context, domain *books.Domain) (books.Domain, error) {
+	book := FromDomain(*domain)
 	err := rep.Conn.Create(&book)
 	if err.Error != nil {
 		return books.Domain{}, err.Error
@@ -66,4 +66,15 @@ func (rep *MysqlBookRepository) Delete(ctx context.Context, id uint) error {
 	}
 
 	return nil
+}
+
+func (rep *MysqlBookRepository) BooksCheck(ctx context.Context, Category_Id uint, Description_Id uint) (uint, error) {
+	var count int64
+	err := rep.Conn.Model(&Books{}).Where("Category_Id = ? AND Description_Id = ?", Category_Id, Description_Id).Count(&count)
+
+	if err.Error != nil {
+		return 0, err.Error
+	}
+
+	return uint(count), nil
 }

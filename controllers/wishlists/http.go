@@ -24,8 +24,7 @@ func NewWishlistController(wishlistUseCase wishlists.Usecase) *WishlistControlle
 
 func (wishlistController *WishlistController) GetWishlists(c echo.Context) error {
 	ctx := c.Request().Context()
-	search := c.QueryParam("q")
-	data, err := wishlistController.WishlistUseCase.GetListWishlist(ctx, search)
+	data, err := wishlistController.WishlistUseCase.GetListWishlist(ctx, 1, 1)
 	if err != nil {
 		return controllers.NewErrorResponse(c, http.StatusInternalServerError, err)
 	}
@@ -78,7 +77,7 @@ func (wishlistController *WishlistController) InsertWishlist(c echo.Context) err
 	}
 	ctx := c.Request().Context()
 	var data wishlists.Domain
-	data, err = wishlistController.WishlistUseCase.InsertWishlist(ctx, *request.ToDomain())
+	data, err = wishlistController.WishlistUseCase.InsertWishlist(ctx, request.ToDomain())
 	if err != nil {
 		return controllers.NewErrorResponse(c, http.StatusInternalServerError, err)
 	}

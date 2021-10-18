@@ -6,6 +6,7 @@ import (
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
+	"gorm.io/gorm/logger"
 )
 
 type ConfigDB struct {
@@ -25,6 +26,7 @@ func (config *ConfigDB) InitialDB() *gorm.DB {
 		config.DB_Database)
 
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
+	db.Logger = logger.Default.LogMode(logger.Info)
 	if err != nil {
 		log.Fatal(err)
 	}

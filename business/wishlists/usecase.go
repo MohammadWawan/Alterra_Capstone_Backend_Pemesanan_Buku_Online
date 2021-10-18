@@ -3,7 +3,6 @@ package wishlists
 import (
 	"alterra/business"
 	"context"
-	"errors"
 	"time"
 )
 
@@ -19,17 +18,8 @@ func NewWishlistUsecase(repo Repository, timeout time.Duration) *WishlistUsecase
 	}
 }
 
-func (uc *WishlistUsecase) InsertWishlist(ctx context.Context, domain Domain) (Domain, error) {
-	if domain.User == domain.User {
-		return Domain{}, errors.New("user empty")
-	}
-
-	if domain.Book == domain.Book {
-		return Domain{}, errors.New("book empty")
-	}
-
+func (uc *WishlistUsecase) InsertWishlist(ctx context.Context, domain *Domain) (Domain, error) {
 	wishlist, err := uc.Repo.InsertWishlist(ctx, domain)
-
 	if err != nil {
 		return Domain{}, err
 	}
@@ -37,8 +27,8 @@ func (uc *WishlistUsecase) InsertWishlist(ctx context.Context, domain Domain) (D
 	return wishlist, nil
 }
 
-func (uc *WishlistUsecase) GetListWishlist(ctx context.Context, search string) ([]Domain, error) {
-	wishlist, err := uc.Repo.GetListWishlist(ctx, search)
+func (uc *WishlistUsecase) GetListWishlist(ctx context.Context, User_Id uint, Book_Id uint) ([]Domain, error) {
+	wishlist, err := uc.Repo.GetListWishlist(ctx, 0, 0)
 	if err != nil {
 		return []Domain{}, err
 	}

@@ -3,7 +3,6 @@ package transactions
 import (
 	"alterra/business"
 	"context"
-	"errors"
 	"time"
 )
 
@@ -19,14 +18,7 @@ func NewTransactionUsecase(repo Repository, timeout time.Duration) *TransactionU
 	}
 }
 
-func (uc *TransactionUsecase) InsertTransactions(ctx context.Context, domain Domain) (Domain, error) {
-	if domain.Total_Qty == 0 {
-		return Domain{}, errors.New("total qty empty")
-	}
-	if domain.Total_Price == 0 {
-		return Domain{}, errors.New("total price empty")
-	}
-
+func (uc *TransactionUsecase) InsertTransactions(ctx context.Context, domain *Domain) (Domain, error) {
 	transaction, err := uc.Repo.InsertTransactions(ctx, domain)
 
 	if err != nil {
@@ -36,8 +28,8 @@ func (uc *TransactionUsecase) InsertTransactions(ctx context.Context, domain Dom
 	return transaction, nil
 }
 
-func (uc *TransactionUsecase) GetListTransactions(ctx context.Context, search string) ([]Domain, error) {
-	transaction, err := uc.Repo.GetListTransactions(ctx, search)
+func (uc *TransactionUsecase) GetListTransactions(ctx context.Context, Method_Payment_Id uint, User_Id uint, Karyawan_Id uint) ([]Domain, error) {
+	transaction, err := uc.Repo.GetListTransactions(ctx, 0, 0, 0)
 	if err != nil {
 		return []Domain{}, err
 	}

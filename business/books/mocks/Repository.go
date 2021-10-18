@@ -73,18 +73,18 @@ func (_m *Repository) GetListBook(ctx context.Context, search string) ([]books.D
 }
 
 // InsertBook provides a mock function with given fields: ctx, domain
-func (_m *Repository) InsertBook(ctx context.Context, domain books.Domain) (books.Domain, error) {
+func (_m *Repository) InsertBook(ctx context.Context, domain *books.Domain) (books.Domain, error) {
 	ret := _m.Called(ctx, domain)
 
 	var r0 books.Domain
-	if rf, ok := ret.Get(0).(func(context.Context, books.Domain) books.Domain); ok {
+	if rf, ok := ret.Get(0).(func(context.Context, *books.Domain) books.Domain); ok {
 		r0 = rf(ctx, domain)
 	} else {
 		r0 = ret.Get(0).(books.Domain)
 	}
 
 	var r1 error
-	if rf, ok := ret.Get(1).(func(context.Context, books.Domain) error); ok {
+	if rf, ok := ret.Get(1).(func(context.Context, *books.Domain) error); ok {
 		r1 = rf(ctx, domain)
 	} else {
 		r1 = ret.Error(1)

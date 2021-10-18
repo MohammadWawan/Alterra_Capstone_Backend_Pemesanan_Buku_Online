@@ -18,7 +18,7 @@ func NewMysqlWishlistRepository(conn *gorm.DB) *MysqlWishlistRepository {
 	}
 }
 
-func (rep *MysqlWishlistRepository) GetListWishlist(ctx context.Context, search string) ([]wishlists.Domain, error) {
+func (rep *MysqlWishlistRepository) GetListWishlist(ctx context.Context, User_Id uint, Book_Id uint) ([]wishlists.Domain, error) {
 	var data []Wishlist
 	err := rep.Conn.Find(&data)
 	if err.Error != nil {
@@ -37,8 +37,8 @@ func (rep *MysqlWishlistRepository) GetById(ctx context.Context, Id uint) (wishl
 	return wishlist.ToDomain(), nil
 }
 
-func (rep *MysqlWishlistRepository) InsertWishlist(ctx context.Context, domain wishlists.Domain) (wishlists.Domain, error) {
-	wishlist := FromDomain(domain)
+func (rep *MysqlWishlistRepository) InsertWishlist(ctx context.Context, domain *wishlists.Domain) (wishlists.Domain, error) {
+	wishlist := FromDomain(*domain)
 	err := rep.Conn.Create(&wishlist)
 	if err.Error != nil {
 		return wishlists.Domain{}, err.Error

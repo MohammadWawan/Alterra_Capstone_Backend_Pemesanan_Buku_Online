@@ -1,11 +1,8 @@
 package transactions_test
 
 import (
-	"alterra/business/karyawans"
-	"alterra/business/payment_methods"
 	"alterra/business/transactions"
 	"alterra/business/transactions/mocks"
-	"alterra/business/users"
 	"context"
 	"errors"
 	"testing"
@@ -27,21 +24,8 @@ func setup() {
 		User_Id:           1,
 		Method_Payment_Id: 1,
 		Karyawan_Id:       1,
-		User: users.Domain{
-			Id:      1,
-			Name:    "wawan",
-			Address: "malang",
-		},
-		Payment_Method: payment_methods.Domain{
-			Id:   1,
-			Type: "Debit BRI: 1247 0100 5834 534",
-		},
-		Karyawan: karyawans.Domain{
-			Id:   1,
-			Name: "jamal",
-		},
-		Total_Qty:   1,
-		Total_Price: 100000,
+		Total_Qty:         1,
+		Total_Price:       100000,
 	}
 	listTransactionDomain = append(listTransactionDomain, transactionDomain)
 }
@@ -50,24 +34,7 @@ func TestInsertTransaction(t *testing.T) {
 	setup()
 	transactionRepository.On("InsertTransactions", mock.Anything, mock.Anything).Return(transactionDomain, nil)
 	t.Run("Test Case 1 | Success Insert Transaction", func(t *testing.T) {
-		transaction, err := transactionService.InsertTransactions(context.Background(), transactions.Domain{
-			Id: 1,
-			User: users.Domain{
-				Id:      1,
-				Name:    "wawan",
-				Address: "malang",
-			},
-			Payment_Method: payment_methods.Domain{
-				Id:   1,
-				Type: "Debit BRI: 1247 0100 5834 534",
-			},
-			Karyawan: karyawans.Domain{
-				Id:   1,
-				Name: "jamal",
-			},
-			Total_Qty:   1,
-			Total_Price: 100000,
-		})
+		transaction, err := transactionService.InsertTransactions(context.Background(), &transactions.Domain{})
 
 		assert.NoError(t, err)
 		assert.Equal(t, transactionDomain, transaction)
@@ -78,7 +45,7 @@ func TestGetListTransactions(t *testing.T) {
 	t.Run("Test case 1 | Success GetListTransactions", func(t *testing.T) {
 		setup()
 		transactionRepository.On("GetListTransactions", mock.Anything, mock.Anything).Return(listTransactionDomain, nil).Once()
-		data, err := transactionService.GetListTransactions(context.Background(), transactionDomain.User.Name)
+		data, err := transactionService.GetListTransactions(context.Background(), transactionDomain.Method_Payment_Id, transactionDomain.User_Id, transactionDomain.Karyawan_Id)
 
 		assert.NoError(t, err)
 		assert.NotNil(t, data)
@@ -88,7 +55,7 @@ func TestGetListTransactions(t *testing.T) {
 	t.Run("Test case 2 | Error GetListTransactions", func(t *testing.T) {
 		setup()
 		transactionRepository.On("GetListTransactions", mock.Anything, mock.Anything).Return([]transactions.Domain{}, errors.New("Transactions Not Found")).Once()
-		data, err := transactionService.GetListTransactions(context.Background(), "")
+		data, err := transactionService.GetListTransactions(context.Background(), 0, 0, 0)
 
 		assert.Error(t, err)
 		assert.Equal(t, data, []transactions.Domain{})

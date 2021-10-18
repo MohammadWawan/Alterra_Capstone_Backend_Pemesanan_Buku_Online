@@ -9,12 +9,12 @@ import (
 
 type Domain struct {
 	Id             uint
-	Category_Id    uint
-	Description_Id uint
 	Title          string
 	Price          uint
 	Author         string
 	Publisher      string
+	Category_Id    uint
+	Description_Id uint
 	Category       categories.Domain
 	Description    descriptions.Domain
 	CreatedAt      time.Time
@@ -22,7 +22,7 @@ type Domain struct {
 }
 
 type Usecase interface {
-	InsertBook(ctx context.Context, domain Domain) (Domain, error)
+	InsertBook(ctx context.Context, domain *Domain) (Domain, error)
 	GetListBook(ctx context.Context, search string) ([]Domain, error)
 	GetById(ctx context.Context, id uint) (Domain, error)
 	Update(ctx context.Context, domain Domain, id uint) (Domain, error)
@@ -30,7 +30,7 @@ type Usecase interface {
 }
 
 type Repository interface {
-	InsertBook(ctx context.Context, domain Domain) (Domain, error)
+	InsertBook(ctx context.Context, domain *Domain) (Domain, error)
 	GetListBook(ctx context.Context, search string) ([]Domain, error)
 	GetById(ctx context.Context, id uint) (Domain, error)
 	Update(ctx context.Context, domain Domain, id uint) (Domain, error)

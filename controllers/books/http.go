@@ -71,14 +71,13 @@ func (bookController *BookController) UpdateBook(c echo.Context) error {
 
 func (bookController *BookController) InsertBook(c echo.Context) error {
 	request := requests.InsertBook{}
-	var err error
-	err = c.Bind(&request)
+	err := c.Bind(&request)
 	if err != nil {
-		return controllers.NewErrorResponse(c, http.StatusInternalServerError, err)
+		return controllers.NewErrorResponse(c, http.StatusBadRequest, err)
 	}
 	ctx := c.Request().Context()
 	var data books.Domain
-	data, err = bookController.BookUseCase.InsertBook(ctx, *request.ToDomain())
+	data, err = bookController.BookUseCase.InsertBook(ctx, request.ToDomain())
 	if err != nil {
 		return controllers.NewErrorResponse(c, http.StatusInternalServerError, err)
 	}

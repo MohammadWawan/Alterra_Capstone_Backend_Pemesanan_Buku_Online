@@ -1,26 +1,23 @@
 package requests
 
 import (
-	"alterra/business/karyawans"
-	"alterra/business/payment_methods"
 	"alterra/business/transactions"
-	"alterra/business/users"
 )
 
 type Transaction_Search struct {
-	Payment_Method payment_methods.Domain `json:"type"`
-	User           users.Domain           `json:"user"`
-	Karyawan       karyawans.Domain       `json:"karyawan"`
-	Total_Qty      uint                   `json:"total_qty"`
-	Total_Price    uint                   `json:"total_price"`
+	Method_Payment_Id uint `json:"method_payment_Id"`
+	User_Id           uint `json:"user_id"`
+	Karyawan_Id       uint `json:"karyawan_id"`
+	Total_Qty         uint `json:"total_qty"`
+	Total_Price       uint `json:"total_price"`
 }
 
 func ToDomain(search Transaction_Search) transactions.Domain {
 	return transactions.Domain{
-		Payment_Method: payment_methods.Domain{},
-		User:           users.Domain{},
-		Karyawan:       karyawans.Domain{},
-		Total_Qty:      search.Total_Qty,
-		Total_Price:    search.Total_Price,
+		Method_Payment_Id: search.Method_Payment_Id,
+		User_Id:           search.User_Id,
+		Karyawan_Id:       search.Karyawan_Id,
+		Total_Qty:         search.Total_Qty,
+		Total_Price:       search.Total_Price,
 	}
 }

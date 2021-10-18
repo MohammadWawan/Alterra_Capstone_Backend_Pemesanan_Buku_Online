@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-type UserResponse struct {
+type UserRegisterResponse struct {
 	Id        uint      `json:"id"`
 	Name      string    `json:"name"`
 	Email     string    `json:"email"`
@@ -13,12 +13,8 @@ type UserResponse struct {
 	CreatedAt time.Time `json:"createdAt"`
 	UpdatedAt time.Time `json:"updatedAt"`
 }
-type LoginResponse struct {
-	SessionToken string
-	User         interface{}
-}
 
-func FromDomain(domain users.Domain) UserResponse {
+func FromUsersRegisterDomain(domain users.Domain) UserResponse {
 	return UserResponse{
 		Id:        domain.Id,
 		Name:      domain.Name,
@@ -27,12 +23,4 @@ func FromDomain(domain users.Domain) UserResponse {
 		CreatedAt: domain.CreatedAt,
 		UpdatedAt: domain.UpdatedAt,
 	}
-}
-
-func FromUsersListDomain(domain []users.Domain) []UserResponse {
-	var list []UserResponse
-	for _, v := range domain {
-		list = append(list, FromDomain(v))
-	}
-	return list
 }

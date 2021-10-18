@@ -53,7 +53,7 @@ func (karyawanController KaryawanController) Register(c echo.Context) error {
 	if err != nil {
 		return controllers.NewErrorResponse(c, http.StatusInternalServerError, err)
 	}
-	return controllers.NewSuccesResponse(c, responses.FromKaryawansDomain(data))
+	return controllers.NewSuccesResponse(c, responses.FromKaryawansRegisterDomain(data))
 }
 
 func (karyawanController *KaryawanController) GetKaryawans(c echo.Context) error {
@@ -79,7 +79,7 @@ func (karyawanController *KaryawanController) GetDetailKaryawan(c echo.Context) 
 		return controllers.NewErrorResponse(c, http.StatusInternalServerError, err)
 	}
 
-	return controllers.NewSuccesResponse(c, responses.FromKaryawansDomain(data))
+	return controllers.NewSuccesResponse(c, responses.FromKaryawansRegisterDomain(data))
 }
 
 func (karyawanController *KaryawanController) UpdateKaryawan(c echo.Context) error {
@@ -100,7 +100,7 @@ func (karyawanController *KaryawanController) UpdateKaryawan(c echo.Context) err
 		return controllers.NewErrorResponse(c, http.StatusInternalServerError, err)
 	}
 
-	return controllers.NewSuccesResponse(c, responses.FromKaryawansDomain(data))
+	return controllers.NewSuccesResponse(c, responses.FromKaryawansRegisterDomain(data))
 }
 
 func (karyawanController *KaryawanController) DeleteKaryawan(c echo.Context) error {

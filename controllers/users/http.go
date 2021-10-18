@@ -53,7 +53,7 @@ func (userController *UserController) Register(c echo.Context) error {
 	if err != nil {
 		return controllers.NewErrorResponse(c, http.StatusInternalServerError, err)
 	}
-	return controllers.NewSuccesResponse(c, responses.FromUsersDomain(data))
+	return controllers.NewSuccesResponse(c, responses.FromUsersRegisterDomain(data))
 }
 
 func (userController *UserController) GetUsers(c echo.Context) error {
@@ -79,7 +79,7 @@ func (userController *UserController) GetDetailUser(c echo.Context) error {
 		return controllers.NewErrorResponse(c, http.StatusInternalServerError, err)
 	}
 
-	return controllers.NewSuccesResponse(c, responses.FromUsersDomain(data))
+	return controllers.NewSuccesResponse(c, responses.FromUsersRegisterDomain(data))
 }
 
 func (userController *UserController) UpdateUser(c echo.Context) error {
@@ -100,7 +100,7 @@ func (userController *UserController) UpdateUser(c echo.Context) error {
 		return controllers.NewErrorResponse(c, http.StatusInternalServerError, err)
 	}
 
-	return controllers.NewSuccesResponse(c, responses.FromUsersDomain(data))
+	return controllers.NewSuccesResponse(c, responses.FromUsersRegisterDomain(data))
 }
 
 func (userController *UserController) DeleteUser(c echo.Context) error {

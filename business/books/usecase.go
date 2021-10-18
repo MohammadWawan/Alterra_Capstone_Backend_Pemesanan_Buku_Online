@@ -3,7 +3,6 @@ package books
 import (
 	"alterra/business"
 	"context"
-	"errors"
 	"time"
 )
 
@@ -19,19 +18,8 @@ func NewBookUsecase(repo Repository, timeout time.Duration) *BookUsecase {
 	}
 }
 
-func (uc *BookUsecase) InsertBook(ctx context.Context, domain Domain) (Domain, error) {
-	if domain.Title == "" {
-		return Domain{}, errors.New("title empty")
-	}
-
-	if domain.Author == "" {
-		return Domain{}, errors.New("author empty")
-	}
-	if domain.Publisher == "" {
-		return Domain{}, errors.New("publisher empty")
-	}
+func (uc *BookUsecase) InsertBook(ctx context.Context, domain *Domain) (Domain, error) {
 	book, err := uc.Repo.InsertBook(ctx, domain)
-
 	if err != nil {
 		return Domain{}, err
 	}

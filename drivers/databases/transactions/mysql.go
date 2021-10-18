@@ -18,7 +18,7 @@ func NewMysqlTransactionRepository(conn *gorm.DB) *MysqlTransactionRepository {
 	}
 }
 
-func (rep *MysqlTransactionRepository) GetListTransactions(ctx context.Context, search string) ([]transactions.Domain, error) {
+func (rep *MysqlTransactionRepository) GetListTransactions(ctx context.Context, Method_Payment_Id uint, User_Id uint, Karyawan_Id uint) ([]transactions.Domain, error) {
 	var data []Transaction
 	err := rep.Conn.Find(&data)
 	if err.Error != nil {
@@ -37,8 +37,8 @@ func (rep *MysqlTransactionRepository) GetById(ctx context.Context, Id uint) (tr
 	return transaction.ToDomain(), nil
 }
 
-func (rep *MysqlTransactionRepository) InsertTransactions(ctx context.Context, domain transactions.Domain) (transactions.Domain, error) {
-	transaction := FromDomain(domain)
+func (rep *MysqlTransactionRepository) InsertTransactions(ctx context.Context, domain *transactions.Domain) (transactions.Domain, error) {
+	transaction := FromDomain(*domain)
 	err := rep.Conn.Create(&transaction)
 	if err.Error != nil {
 		return transactions.Domain{}, err.Error

@@ -2,9 +2,6 @@ package transactions
 
 import (
 	"alterra/business/transactions"
-	"alterra/drivers/databases/karyawans"
-	"alterra/drivers/databases/payment_methods"
-	"alterra/drivers/databases/users"
 	"time"
 
 	"gorm.io/gorm"
@@ -15,9 +12,6 @@ type Transaction struct {
 	Payment_Method_Id uint
 	User_Id           uint
 	Karyawan_Id       uint
-	Payment_Method    payment_methods.Payment_Method `gorm:"foreignKey:Payment_Method_Id"`
-	User              users.Users                    `gorm:"foreignKey:User_Id"`
-	Karyawan          karyawans.Karyawans            `gorm:"foreignKey:Karyawan_Id"`
 	Total_Qty         uint
 	Total_Price       uint
 	CreatedAt         time.Time
@@ -27,14 +21,14 @@ type Transaction struct {
 
 func FromDomain(domain transactions.Domain) Transaction {
 	return Transaction{
-		Id:             domain.Id,
-		Payment_Method: payment_methods.FromDomain(domain.Payment_Method),
-		User:           users.FromDomain(domain.User),
-		Karyawan:       karyawans.FromDomain(domain.Karyawan),
-		Total_Qty:      domain.Total_Qty,
-		Total_Price:    domain.Total_Price,
-		CreatedAt:      domain.CreatedAt,
-		UpdatedAt:      domain.UpdatedAt,
+		Id:                domain.Id,
+		Payment_Method_Id: domain.Method_Payment_Id,
+		User_Id:           domain.User_Id,
+		Karyawan_Id:       domain.Method_Payment_Id,
+		Total_Qty:         domain.Total_Qty,
+		Total_Price:       domain.Total_Price,
+		CreatedAt:         domain.CreatedAt,
+		UpdatedAt:         domain.UpdatedAt,
 	}
 }
 

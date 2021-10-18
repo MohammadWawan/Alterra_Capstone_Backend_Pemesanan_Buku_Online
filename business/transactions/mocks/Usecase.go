@@ -49,13 +49,13 @@ func (_m *Usecase) GetById(ctx context.Context, id uint) (transactions.Domain, e
 	return r0, r1
 }
 
-// GetListTransactions provides a mock function with given fields: ctx, search
-func (_m *Usecase) GetListTransactions(ctx context.Context, search string) ([]transactions.Domain, error) {
-	ret := _m.Called(ctx, search)
+// GetListTransactions provides a mock function with given fields: ctx, Method_Payment_Id, User_Id, Karyawan_Id
+func (_m *Usecase) GetListTransactions(ctx context.Context, Method_Payment_Id uint, User_Id uint, Karyawan_Id uint) ([]transactions.Domain, error) {
+	ret := _m.Called(ctx, Method_Payment_Id, User_Id, Karyawan_Id)
 
 	var r0 []transactions.Domain
-	if rf, ok := ret.Get(0).(func(context.Context, string) []transactions.Domain); ok {
-		r0 = rf(ctx, search)
+	if rf, ok := ret.Get(0).(func(context.Context, uint, uint, uint) []transactions.Domain); ok {
+		r0 = rf(ctx, Method_Payment_Id, User_Id, Karyawan_Id)
 	} else {
 		if ret.Get(0) != nil {
 			r0 = ret.Get(0).([]transactions.Domain)
@@ -63,8 +63,8 @@ func (_m *Usecase) GetListTransactions(ctx context.Context, search string) ([]tr
 	}
 
 	var r1 error
-	if rf, ok := ret.Get(1).(func(context.Context, string) error); ok {
-		r1 = rf(ctx, search)
+	if rf, ok := ret.Get(1).(func(context.Context, uint, uint, uint) error); ok {
+		r1 = rf(ctx, Method_Payment_Id, User_Id, Karyawan_Id)
 	} else {
 		r1 = ret.Error(1)
 	}
@@ -73,18 +73,18 @@ func (_m *Usecase) GetListTransactions(ctx context.Context, search string) ([]tr
 }
 
 // InsertTransactions provides a mock function with given fields: ctx, domain
-func (_m *Usecase) InsertTransactions(ctx context.Context, domain transactions.Domain) (transactions.Domain, error) {
+func (_m *Usecase) InsertTransactions(ctx context.Context, domain *transactions.Domain) (transactions.Domain, error) {
 	ret := _m.Called(ctx, domain)
 
 	var r0 transactions.Domain
-	if rf, ok := ret.Get(0).(func(context.Context, transactions.Domain) transactions.Domain); ok {
+	if rf, ok := ret.Get(0).(func(context.Context, *transactions.Domain) transactions.Domain); ok {
 		r0 = rf(ctx, domain)
 	} else {
 		r0 = ret.Get(0).(transactions.Domain)
 	}
 
 	var r1 error
-	if rf, ok := ret.Get(1).(func(context.Context, transactions.Domain) error); ok {
+	if rf, ok := ret.Get(1).(func(context.Context, *transactions.Domain) error); ok {
 		r1 = rf(ctx, domain)
 	} else {
 		r1 = ret.Error(1)

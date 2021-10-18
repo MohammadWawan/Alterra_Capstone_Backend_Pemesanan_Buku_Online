@@ -3,7 +3,6 @@ package transaction_details
 import (
 	"alterra/business"
 	"context"
-	"errors"
 	"time"
 )
 
@@ -19,14 +18,7 @@ func NewTransaction_DetailUsecase(repo Repository, timeout time.Duration) *Trans
 	}
 }
 
-func (uc *Transaction_DetailUsecase) InsertTransaction_Details(ctx context.Context, domain Domain) (Domain, error) {
-	if domain.Qty == 0 {
-		return Domain{}, errors.New("qty empty")
-	}
-	if domain.Price == 0 {
-		return Domain{}, errors.New("price empty")
-	}
-
+func (uc *Transaction_DetailUsecase) InsertTransaction_Details(ctx context.Context, domain *Domain) (Domain, error) {
 	transaction_detail, err := uc.Repo.InsertTransaction_Details(ctx, domain)
 
 	if err != nil {
@@ -36,8 +28,8 @@ func (uc *Transaction_DetailUsecase) InsertTransaction_Details(ctx context.Conte
 	return transaction_detail, nil
 }
 
-func (uc *Transaction_DetailUsecase) GetListTransaction_Details(ctx context.Context, search string) ([]Domain, error) {
-	transaction_detail, err := uc.Repo.GetListTransaction_Details(ctx, search)
+func (uc *Transaction_DetailUsecase) GetListTransaction_Details(ctx context.Context, Book_Id uint, Transaction_Id uint) ([]Domain, error) {
+	transaction_detail, err := uc.Repo.GetListTransaction_Details(ctx, Book_Id, Transaction_Id)
 	if err != nil {
 		return []Domain{}, err
 	}

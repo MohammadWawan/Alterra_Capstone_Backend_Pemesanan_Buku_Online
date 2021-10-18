@@ -100,10 +100,6 @@ func main() {
 	karyawanUseCase := _karyawanUsecase.NewKaryawanUsecase(karyawanRepository, timeoutContext, &configJWT)
 	karyawanController := _karyawanController.NewKaryawanController(karyawanUseCase)
 
-	bookRepository := books.NewMysqlBookRepository(Conn)
-	bookUseCase := _bookUsecase.NewBookUsecase(bookRepository, timeoutContext)
-	bookcontroller := _bookController.NewBookController(bookUseCase)
-
 	categoryRepository := categories.NewMysqlCategoryRepository(Conn)
 	categoryUseCase := _categoryUsecase.NewCategoryUsecase(categoryRepository, timeoutContext)
 	categorycontroller := _categoryController.NewCategoryController(categoryUseCase)
@@ -127,6 +123,10 @@ func main() {
 	transactionRepository := transactions.NewMysqlTransactionRepository(Conn)
 	transactionUseCase := _transactionUsecase.NewTransactionUsecase(transactionRepository, timeoutContext)
 	transactioncontroller := _transactionController.NewTransactionController(transactionUseCase.Repo)
+
+	bookRepository := books.NewMysqlBookRepository(Conn)
+	bookUseCase := _bookUsecase.NewBookUsecase(bookRepository, timeoutContext)
+	bookcontroller := _bookController.NewBookController(bookUseCase)
 
 	routesInit := routes.ControllerList{
 		UserController:               *userController,

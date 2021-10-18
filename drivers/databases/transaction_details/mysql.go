@@ -18,7 +18,7 @@ func NewMysqlTransaction_DetailRepository(conn *gorm.DB) *MysqlTransaction_Detai
 	}
 }
 
-func (rep *MysqlTransaction_DetailRepository) GetListTransaction_Details(ctx context.Context, search string) ([]transaction_details.Domain, error) {
+func (rep *MysqlTransaction_DetailRepository) GetListTransaction_Details(ctx context.Context, Book_Id uint, Transaction_Id uint) ([]transaction_details.Domain, error) {
 	var data []Transaction_Detail
 	err := rep.Conn.Find(&data)
 	if err.Error != nil {
@@ -37,8 +37,8 @@ func (rep *MysqlTransaction_DetailRepository) GetById(ctx context.Context, Id ui
 	return transaction_detail.ToDomain(), nil
 }
 
-func (rep *MysqlTransaction_DetailRepository) InsertTransaction_Details(ctx context.Context, domain transaction_details.Domain) (transaction_details.Domain, error) {
-	transaction_detail := FromDomain(domain)
+func (rep *MysqlTransaction_DetailRepository) InsertTransaction_Details(ctx context.Context, domain *transaction_details.Domain) (transaction_details.Domain, error) {
+	transaction_detail := FromDomain(*domain)
 	err := rep.Conn.Create(&transaction_detail)
 	if err.Error != nil {
 		return transaction_details.Domain{}, err.Error

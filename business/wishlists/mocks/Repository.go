@@ -49,13 +49,13 @@ func (_m *Repository) GetById(ctx context.Context, id uint) (wishlists.Domain, e
 	return r0, r1
 }
 
-// GetListWishlist provides a mock function with given fields: ctx, search
-func (_m *Repository) GetListWishlist(ctx context.Context, search string) ([]wishlists.Domain, error) {
-	ret := _m.Called(ctx, search)
+// GetListWishlist provides a mock function with given fields: ctx, User_Id, Book_Id
+func (_m *Repository) GetListWishlist(ctx context.Context, User_Id uint, Book_Id uint) ([]wishlists.Domain, error) {
+	ret := _m.Called(ctx, User_Id, Book_Id)
 
 	var r0 []wishlists.Domain
-	if rf, ok := ret.Get(0).(func(context.Context, string) []wishlists.Domain); ok {
-		r0 = rf(ctx, search)
+	if rf, ok := ret.Get(0).(func(context.Context, uint, uint) []wishlists.Domain); ok {
+		r0 = rf(ctx, User_Id, Book_Id)
 	} else {
 		if ret.Get(0) != nil {
 			r0 = ret.Get(0).([]wishlists.Domain)
@@ -63,8 +63,8 @@ func (_m *Repository) GetListWishlist(ctx context.Context, search string) ([]wis
 	}
 
 	var r1 error
-	if rf, ok := ret.Get(1).(func(context.Context, string) error); ok {
-		r1 = rf(ctx, search)
+	if rf, ok := ret.Get(1).(func(context.Context, uint, uint) error); ok {
+		r1 = rf(ctx, User_Id, Book_Id)
 	} else {
 		r1 = ret.Error(1)
 	}
@@ -73,18 +73,18 @@ func (_m *Repository) GetListWishlist(ctx context.Context, search string) ([]wis
 }
 
 // InsertWishlist provides a mock function with given fields: ctx, domain
-func (_m *Repository) InsertWishlist(ctx context.Context, domain wishlists.Domain) (wishlists.Domain, error) {
+func (_m *Repository) InsertWishlist(ctx context.Context, domain *wishlists.Domain) (wishlists.Domain, error) {
 	ret := _m.Called(ctx, domain)
 
 	var r0 wishlists.Domain
-	if rf, ok := ret.Get(0).(func(context.Context, wishlists.Domain) wishlists.Domain); ok {
+	if rf, ok := ret.Get(0).(func(context.Context, *wishlists.Domain) wishlists.Domain); ok {
 		r0 = rf(ctx, domain)
 	} else {
 		r0 = ret.Get(0).(wishlists.Domain)
 	}
 
 	var r1 error
-	if rf, ok := ret.Get(1).(func(context.Context, wishlists.Domain) error); ok {
+	if rf, ok := ret.Get(1).(func(context.Context, *wishlists.Domain) error); ok {
 		r1 = rf(ctx, domain)
 	} else {
 		r1 = ret.Error(1)

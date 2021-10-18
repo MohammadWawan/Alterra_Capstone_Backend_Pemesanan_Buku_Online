@@ -24,8 +24,7 @@ func NewTransaction_DetailController(transaction_detailUseCase transaction_detai
 
 func (transaction_detailController *Transaction_DetailController) GetTransaction_Details(c echo.Context) error {
 	ctx := c.Request().Context()
-	search := c.QueryParam("q")
-	data, err := transaction_detailController.Transaction_DetailUseCase.GetListTransaction_Details(ctx, search)
+	data, err := transaction_detailController.Transaction_DetailUseCase.GetListTransaction_Details(ctx, 1, 1)
 	if err != nil {
 		return controllers.NewErrorResponse(c, http.StatusInternalServerError, err)
 	}
@@ -78,7 +77,7 @@ func (transaction_detailController *Transaction_DetailController) InsertTransact
 	}
 	ctx := c.Request().Context()
 	var data transaction_details.Domain
-	data, err = transaction_detailController.Transaction_DetailUseCase.InsertTransaction_Details(ctx, *request.ToDomain())
+	data, err = transaction_detailController.Transaction_DetailUseCase.InsertTransaction_Details(ctx, request.ToDomain())
 	if err != nil {
 		return controllers.NewErrorResponse(c, http.StatusInternalServerError, err)
 	}
